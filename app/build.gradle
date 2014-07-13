@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+def versionMajor = 0
+def versionMinor = 1
+def versionPatch = 0
+def versionBuild = 0 // bump for dogfood builds, public betas, etc.
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.1.0"
+
+    defaultConfig {
+        applicationId "com.corneliudascalu.mvpnotes"
+        minSdkVersion 15
+        targetSdkVersion 19
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'LICENSE.txt'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.github.gabrielemariotti.cards:library:1.7.3'
+    compile 'com.github.gabrielemariotti.cards:library-extra:1.7.3'
+    compile 'com.jakewharton:butterknife:5.1.1'
+    compile 'com.jakewharton.timber:timber:2.4.1'
+    compile 'com.squareup.dagger:dagger:1.2.1'
+    compile 'com.squareup.dagger:dagger-compiler:1.2.1'
+    compile 'joda-time:joda-time:2.3'
+
+    androidTestCompile('com.jakewharton.espresso:espresso:1.1-r3') {
+        exclude group: 'com.squareup.dagger'
+        //exclude group: 'org.hamcrest', module: 'hamcrest-core'
+    }
+}
