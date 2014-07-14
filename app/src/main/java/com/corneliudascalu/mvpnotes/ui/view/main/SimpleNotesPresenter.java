@@ -5,7 +5,10 @@ import com.corneliudascalu.mvpnotes.data.model.Note;
 import org.joda.time.DateTime;
 
 /**
- * @author Corneliu Dascalu <corneliu.dascalu@osf-global.com>
+ * Implements a simple note presenter, that handles the data input from the {@link com.corneliudascalu.mvpnotes.ui
+ * .view.main.NotesView} and communicates with the {@link com.corneliudascalu.mvpnotes.data.interactor.NoteInteractor}
+ *
+ * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 public class SimpleNotesPresenter implements NotesPresenter, OnNoteAddedListener {
 

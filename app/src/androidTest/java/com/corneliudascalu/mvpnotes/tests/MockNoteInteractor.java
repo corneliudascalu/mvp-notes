@@ -8,7 +8,11 @@ import timber.log.Timber;
 import java.util.Random;
 
 /**
- * @author Corneliu Dascalu <corneliu.dascalu@osf-global.com>
+ * A different implementation of a {@link com.corneliudascalu.mvpnotes.data.interactor.NoteInteractor}. There's not
+ * much difference to {@link com.corneliudascalu.mvpnotes.data.interactor.impl.NoteInteractorImpl} used in the app,
+ * but assume that the one from the app is doing real work
+ *
+ * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 public class MockNoteInteractor implements NoteInteractor {
     @Override

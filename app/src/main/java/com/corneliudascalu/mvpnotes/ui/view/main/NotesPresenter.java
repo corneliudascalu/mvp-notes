@@ -1,7 +1,9 @@
 package com.corneliudascalu.mvpnotes.ui.view.main;
 
 /**
- * @author Corneliu Dascalu <corneliu.dascalu@osf-global.com>
+ * Defines the methods of a NotesPresenter implementation
+ *
+ * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 public interface NotesPresenter {
     void submitNewNote(String title, String text);

@@ -41,7 +41,7 @@ dependencies {
     compile 'joda-time:joda-time:2.3'
 
     androidTestCompile('com.jakewharton.espresso:espresso:1.1-r3') {
+        // avoid duplicating the dagger dependencies (it's included in Jake Wharton's Espresso build)
         exclude group: 'com.squareup.dagger'
-        //exclude group: 'org.hamcrest', module: 'hamcrest-core'
     }
 }

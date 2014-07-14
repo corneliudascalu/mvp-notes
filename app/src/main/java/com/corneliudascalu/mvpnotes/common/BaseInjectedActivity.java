@@ -7,7 +7,10 @@ import dagger.ObjectGraph;
 import java.util.List;
 
 /**
- * @author Corneliu Dascalu <corneliu.dascalu@osf-global.com>
+ * Base class for all activities, which creates a scoped object graph and injects is in the activity. Extended
+ * classes will implement the {@link #getModules()} method to specify the needed modules
+ *
+ * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 public abstract class BaseInjectedActivity extends Activity {
 

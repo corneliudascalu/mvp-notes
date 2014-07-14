@@ -5,7 +5,11 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * @author Corneliu Dascalu <corneliu.dascalu@osf-global.com>
+ * An interactor module that supplies a different {@link com.corneliudascalu.mvpnotes.data.interactor
+ * .NoteInteractor}, by overriding the one from the {@link com.corneliudascalu.mvpnotes.data.interactor
+ * .InteractorsModule}
+ *
+ * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 @Module(overrides = true, library = true)
 public class MockNoteInteractorModule {

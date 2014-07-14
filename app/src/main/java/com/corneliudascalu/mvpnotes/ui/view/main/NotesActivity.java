@@ -42,6 +42,10 @@ public class NotesActivity extends BaseInjectedActivity implements NotesView {
         dateTimeFormatter = builder.toFormatter();
     }
 
+    /**
+     * We'll need the {@link com.corneliudascalu.mvpnotes.ui.view.main.NotesModule} to supply the {@link com
+     * .corneliudascalu.mvpnotes.ui.view.main.NotesPresenter} (and maybe other stuff, in the future)
+     */
     @Override
     protected List<Object> getModules() {
         return Arrays.<Object>asList(new NotesModule(this));

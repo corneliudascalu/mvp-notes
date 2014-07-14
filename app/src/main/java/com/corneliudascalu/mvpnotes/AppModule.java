@@ -7,7 +7,7 @@ import dagger.Provides;
 import javax.inject.Singleton;
 
 /**
- * @author Corneliu Dascalu <corneliu.dascalu@osf-global.com>
+ * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 @Module(injects = {MVPNotesApp.class},
         includes = {InteractorsModule.class}

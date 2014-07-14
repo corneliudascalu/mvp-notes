@@ -8,7 +8,13 @@ import dagger.Provides;
 import javax.inject.Singleton;
 
 /**
- * @author Corneliu Dascalu <corneliu.dascalu@osf-global.com>
+ * Provides the stuff needed by the activity. In this case, the {@link com.corneliudascalu.mvpnotes.ui.view.main
+ * .NotesPresenter}. Interesting to note, the {@link com.corneliudascalu.mvpnotes.data.interactor.NoteInteractor}
+ * from the {@link #provideNotesPresenter(NotesView, com.corneliudascalu.mvpnotes.data.interactor.NoteInteractor)}
+ * method definition is provided by the {@link com.corneliudascalu.mvpnotes.AppModule},
+ * through the {@link com.corneliudascalu.mvpnotes.data.interactor.InteractorsModule InteractorsModule}
+ *
+ * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 @Module(
         injects = {NotesActivity.class},
@@ -21,11 +27,15 @@ public class NotesModule {
         this.notesView = notesView;
     }
 
-    @Provides @Singleton public NotesView provideNotesView() {
+    @Provides
+    @Singleton
+    public NotesView provideNotesView() {
         return notesView;
     }
 
-    @Provides @Singleton public NotesPresenter provideNotesPresenter(NotesView notesView, NoteInteractor noteInteractor) {
+    @Provides
+    @Singleton
+    public NotesPresenter provideNotesPresenter(NotesView notesView, NoteInteractor noteInteractor) {
         return new SimpleNotesPresenter(notesView, noteInteractor);
     }
 }

@@ -4,7 +4,9 @@ import android.app.Application;
 import dagger.ObjectGraph;
 
 /**
- * @author Corneliu Dascalu <corneliu.dascalu@osf-global.com>
+ * Holds the app object graph in a static variable, which will only be destroyed if the app is destroyed
+ *
+ * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 public class ObjectGraphHolder {
     private static ObjectGraph objectGraph;

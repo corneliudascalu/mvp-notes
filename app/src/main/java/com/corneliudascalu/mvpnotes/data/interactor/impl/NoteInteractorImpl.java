@@ -8,7 +8,10 @@ import com.corneliudascalu.mvpnotes.ui.view.main.OnNoteAddedListener;
 import java.util.Random;
 
 /**
- * @author Corneliu Dascalu <corneliu.dascalu@osf-global.com>
+ * A very simple implementation of a NoteInteractor. Only the {@link #addNote(com.corneliudascalu.mvpnotes.data.model.Note, com.corneliudascalu.mvpnotes.ui.view.main.OnNoteAddedListener)} method is functional (barely),
+ * with 20% chance of throwing an exception
+ *
+ * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 public class NoteInteractorImpl implements NoteInteractor {
     @Override

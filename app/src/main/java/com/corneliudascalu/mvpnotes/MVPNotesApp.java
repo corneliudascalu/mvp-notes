@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author Corneliu Dascalu <corneliu.dascalu@osf-global.com>
+ * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 public class MVPNotesApp extends Application {
 
@@ -24,10 +24,19 @@ public class MVPNotesApp extends Application {
         });
     }
 
+    /**
+     * The list of modules containing application-level stuff
+     * @return
+     */
     private List<Object> getModules() {
         return Arrays.<Object>asList(new AppModule(this));
     }
 
+    /**
+     * Create a scoped object graph by adding some modules to the app modules
+     * @param modules
+     * @return
+     */
     public ObjectGraph createScopedObjectGraph(Object... modules) {
         return ObjectGraphHolder.getObjectGraph(this).plus(modules);
     }

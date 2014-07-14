@@ -19,7 +19,7 @@ import static com.google.android.apps.common.testing.ui.espresso.matcher.ViewMat
 import static com.google.android.apps.common.testing.ui.espresso.matcher.ViewMatchers.withText;
 
 /**
- * @author Corneliu Dascalu <corneliu.dascalu@osf-global.com>
+ * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 public class MainInstrumentationTest extends ActivityInstrumentationTestCase2<NotesActivity> {
     private NotesActivity notesActivity;
@@ -32,6 +32,8 @@ public class MainInstrumentationTest extends ActivityInstrumentationTestCase2<No
     protected void setUp() throws Exception {
         super.setUp();
 
+        // set a new graph creator to be used by the activity
+        // we could use a different AppModule here if we want, but the point is to demonstrate overriding a module
         ObjectGraphHolder.forceObjectGraphCreator(new ObjectGraphCreator() {
             @Override
             public ObjectGraph create(Application application) {
