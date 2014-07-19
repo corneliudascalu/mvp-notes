@@ -30,6 +30,7 @@ public class NoteInteractorImpl implements NoteInteractor {
 
     public NoteInteractorImpl(MVPNotesApp app) {
         mHandler = new Handler();
+        // inject the SimpleDatabase only here, because I don't need it anywhere else
         ObjectGraph objectGraph = ObjectGraphHolder.createScopedObjectGraph(app)
                 .plus(DatabaseModule.class);
         objectGraph.inject(this);
