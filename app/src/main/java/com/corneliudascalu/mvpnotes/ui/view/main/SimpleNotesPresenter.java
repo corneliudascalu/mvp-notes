@@ -40,6 +40,11 @@ public class SimpleNotesPresenter implements NotesPresenter, OnNoteOperationList
     }
 
     @Override
+    public void deleteNote(Note note) {
+        noteInteractor.deleteNote(note, this);
+    }
+
+    @Override
     public void onNoteAdded(Note note) {
         notesView.addNotes(note);
     }
@@ -50,8 +55,7 @@ public class SimpleNotesPresenter implements NotesPresenter, OnNoteOperationList
     }
 
     @Override
-    public void onNoteDeleted(Note note) {
-        notesView.removeNote(note);
+    public void onNoteDeleted(Note note) {notesView.removeNote(note);
     }
 
     @Override
