@@ -18,7 +18,9 @@ import javax.inject.Inject;
 import dagger.ObjectGraph;
 
 /**
- * A very simple implementation of a NoteInteractor.
+ * A very simple implementation of a NoteInteractor, which simulates delayed operations.
+ * Because this is just a sample, I'm using the SimpleDatabase class directly, not an interface.
+ * Normally, there should be a ContentProvider there, or something similar.
  *
  * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
