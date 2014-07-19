@@ -39,6 +39,7 @@ dependencies {
     compile 'com.squareup.dagger:dagger:1.2.1'
     compile 'com.squareup.dagger:dagger-compiler:1.2.1'
     compile 'joda-time:joda-time:2.3'
+    compile 'com.google.code.gson:gson:2.2.4'
 
     androidTestCompile('com.jakewharton.espresso:espresso:1.1-r3') {
         // avoid duplicating the dagger dependencies (it's included in Jake Wharton's Espresso build)

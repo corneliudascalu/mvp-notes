@@ -2,7 +2,8 @@ package com.corneliudascalu.mvpnotes.tests;
 
 import com.corneliudascalu.mvpnotes.data.interactor.NoteInteractor;
 import com.corneliudascalu.mvpnotes.data.model.Note;
-import com.corneliudascalu.mvpnotes.ui.view.main.OnNoteAddedListener;
+import com.corneliudascalu.mvpnotes.ui.view.main.OnNoteOperationListener;
+
 import timber.log.Timber;
 
 import java.util.Random;
@@ -16,7 +17,7 @@ import java.util.Random;
  */
 public class MockNoteInteractor implements NoteInteractor {
     @Override
-    public void addNote(Note note, OnNoteAddedListener listener) {
+    public void storeNote(Note note, OnNoteOperationListener listener) {
         if (new Random().nextInt(10) > 3) {
             Timber.d("MockNote", "Adding note");
             listener.onNoteAdded(note);

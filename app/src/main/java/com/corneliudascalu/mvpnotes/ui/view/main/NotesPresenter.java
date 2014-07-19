@@ -6,5 +6,8 @@ package com.corneliudascalu.mvpnotes.ui.view.main;
  * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 public interface NotesPresenter {
+
+    void requestNotes();
+
     void submitNewNote(String title, String text);
 }

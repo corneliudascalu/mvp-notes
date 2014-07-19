@@ -1,10 +1,11 @@
 package com.corneliudascalu.mvpnotes;
 
 import com.corneliudascalu.mvpnotes.data.interactor.InteractorsModule;
-import dagger.Module;
-import dagger.Provides;
 
 import javax.inject.Singleton;
+
+import dagger.Module;
+import dagger.Provides;
 
 /**
  * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>

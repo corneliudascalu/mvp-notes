@@ -11,5 +11,7 @@ import com.corneliudascalu.mvpnotes.data.model.Note;
 public interface NotesView {
     void setNoteError(String error);
 
-    void addNote(Note note);
+    void addNotes(Note... note);
+
+    void removeNote(Note note);
 }
