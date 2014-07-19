@@ -13,6 +13,9 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
+ * A module that provides a SimpleDatabase instance. It adds to AppModule to 
+ * get the MVPNotesApp instance from there
+ * 
  * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 @Module(injects = NoteInteractorImpl.class, addsTo = AppModule.class)
