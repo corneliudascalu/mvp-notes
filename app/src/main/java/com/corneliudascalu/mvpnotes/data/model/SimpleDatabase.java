@@ -16,6 +16,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * Very simple database, that stores notes as JSON strings, with the ids as keys.
+ * It uses a SharedPreferences instance.
+ * 
  * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 public class SimpleDatabase {
