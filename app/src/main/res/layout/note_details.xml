@@ -4,17 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@android:drawable/editbox_background">
-
-    <TextView
-        android:id="@+id/noteTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Title"
-        style="@android:style/TextAppearance.DeviceDefault.Large" />
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/noteText"
@@ -35,15 +26,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             style="@android:style/TextAppearance.Small"
-            tools:text="1999-01-01 23:45"
-            android:layout_marginTop="10dp" />
+            tools:text="1999-01-01 23:45" />
 
         <ImageButton
+            android:id="@+id/deleteNoteButton"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@android:drawable/ic_menu_delete"
-            android:background="@android:color/transparent"
-            android:scaleType="fitCenter"/>
+            android:background="@android:drawable/list_selector_background"
+            android:scaleType="fitCenter"
+            android:padding="5dp" />
     </LinearLayout>
 
 </LinearLayout>

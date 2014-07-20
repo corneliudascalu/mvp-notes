@@ -1,6 +1,6 @@
 package com.corneliudascalu.mvpnotes.common;
 
-import android.app.Fragment;
+import android.app.DialogFragment;
 import android.os.Bundle;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import dagger.ObjectGraph;
 /**
  * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
-public abstract class InjectedFragment extends Fragment {
+public abstract class InjectedDialogFragment extends DialogFragment {
 
     private ObjectGraph objectGraph;
 

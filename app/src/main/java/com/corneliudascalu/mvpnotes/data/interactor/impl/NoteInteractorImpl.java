@@ -28,12 +28,15 @@ public class NoteInteractorImpl implements NoteInteractor {
 
     private Handler mHandler;
 
+    private Random mRandom;
+
     public NoteInteractorImpl(MVPNotesApp app) {
         mHandler = new Handler();
         // inject the SimpleDatabase only here, because I don't need it anywhere else
         ObjectGraph objectGraph = ObjectGraphHolder.createScopedObjectGraph(app)
                 .plus(DatabaseModule.class);
         objectGraph.inject(this);
+        mRandom = new Random();
     }
 
     @Inject
@@ -48,7 +51,7 @@ public class NoteInteractorImpl implements NoteInteractor {
         simulateExecuteInBackground(new Runnable() {
             @Override
             public void run() {
-                if (new Random().nextInt(5) > 0) {
+                if (mRandom.nextInt(10) > 0) {
                     long id = mSimpleDatabase.addOrReplace(note);
                     if (id > 0) {
                         note.id = id;
@@ -68,6 +71,11 @@ public class NoteInteractorImpl implements NoteInteractor {
         simulateExecuteInBackground(new Runnable() {
             @Override
             public void run() {
+                // generate random error
+                if (mRandom.nextInt(10) > 0) {
+                    listener.onNoteDeleteError(new Note.Error(note, "Randomly generated error"));
+                    return;
+                }
                 int deleted = mSimpleDatabase.delete(note.id);
                 if (deleted > 0) {
                     listener.onNoteDeleted(note);

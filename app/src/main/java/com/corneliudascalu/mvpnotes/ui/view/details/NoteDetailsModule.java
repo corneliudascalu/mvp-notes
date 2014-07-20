@@ -14,7 +14,7 @@ import dagger.Provides;
  * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
 @Module
-        (injects = NoteDetailsFragment.class,
+        (injects = NoteDetailsDialogFragment.class,
                 addsTo = AppModule.class)
 public class NoteDetailsModule {
 

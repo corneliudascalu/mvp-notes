@@ -12,6 +12,8 @@ import android.os.Parcelable;
  */
 public class Note implements Parcelable {
 
+    public static final String EXTRA_NOTE = Note.class.getSimpleName() + "extraNote";
+
     public long id;
 
     public String title;

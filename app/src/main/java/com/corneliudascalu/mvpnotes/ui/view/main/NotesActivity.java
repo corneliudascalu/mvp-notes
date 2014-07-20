@@ -3,6 +3,7 @@ package com.corneliudascalu.mvpnotes.ui.view.main;
 import com.corneliudascalu.mvpnotes.R;
 import com.corneliudascalu.mvpnotes.common.BaseInjectedActivity;
 import com.corneliudascalu.mvpnotes.data.model.Note;
+import com.corneliudascalu.mvpnotes.ui.view.details.NoteDetailsDialogFragment;
 
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.DateTimeFormatterBuilder;
@@ -112,6 +113,14 @@ public class NotesActivity extends BaseInjectedActivity implements NotesView {
         };
 
         notesList.setAdapter(mAdapter);
+        notesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Note note = mAdapter.getItem(position);
+                NoteDetailsDialogFragment dialog = NoteDetailsDialogFragment.newInstance(note);
+                dialog.show(getFragmentManager(), NoteDetailsDialogFragment.TAG);
+            }
+        });
         notesList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position,

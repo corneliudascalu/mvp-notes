@@ -10,4 +10,6 @@ public interface NoteDetailsView {
     void setNote(Note note);
 
     void close();
+
+    void showError(String error);
 }
