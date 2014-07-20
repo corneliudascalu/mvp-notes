@@ -2,12 +2,15 @@ package com.corneliudascalu.mvpnotes.data.model;
 
 import org.joda.time.DateTime;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Simple model of a note
  *
  * @author Corneliu Dascalu <corneliu.dascalu@gmail.com>
  */
-public class Note {
+public class Note implements Parcelable {
 
     public long id;
 
@@ -38,4 +41,37 @@ public class Note {
             this.id = id;
         }
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(this.id);
+        dest.writeString(this.title);
+        dest.writeString(this.text);
+        dest.writeString(this.createdDate.toString());
+    }
+
+    public Note() {
+    }
+
+    private Note(Parcel in) {
+        this.id = in.readLong();
+        this.title = in.readString();
+        this.text = in.readString();
+        this.createdDate = new DateTime(in.readString());
+    }
+
+    public static final Parcelable.Creator<Note> CREATOR = new Parcelable.Creator<Note>() {
+        public Note createFromParcel(Parcel source) {
+            return new Note(source);
+        }
+
+        public Note[] newArray(int size) {
+            return new Note[size];
+        }
+    };
 }
